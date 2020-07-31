@@ -1,0 +1,31 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+<body class="text-center back-image">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <a class="masthead-brand" href="{{url_for('index')}}"><h3>VideoParser</h3><a/>
+            <nav class="nav nav-masthead justify-content-center">
+              <a class="nav-link active" href="{{url_for('video_youtube')}}">Видео Youtube</a>
+              <a class="nav-link " href="{{url_for ('video_vk') }}">Видео VK</a>
+            </nav>
+        </div>
+      </header>
+
+      <div class="inner cover">
+        <h1></h1>
+        <h4 class="cover-heading">Youtube </h4>
+          <form method="post" action="/video_youtube">
+            <div class="form-row">
+              <div class="col-10">
+                <input type="text" class="form-control" placeholder="Ссылка на видео Youtube" name="link" aria-describedby="button-addon2">
+              </div>
+              <div class="col-2">
+                <button class="btn btn-danger" type="submit" id="button-addon2">Скачать</button>
+              </div>
+            </div>
+          </form>
+
+{%endblock%}

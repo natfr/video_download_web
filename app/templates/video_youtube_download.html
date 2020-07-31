@@ -1,0 +1,56 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+<body class="text-center back-image">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <a class="masthead-brand" href="{{url_for('index')}}"><h3>VideoParser</h3><a/>
+            <nav class="nav nav-masthead justify-content-center">
+              <a class="nav-link active" href="{{url_for('video_youtube')}}">Видео Youtube</a>
+              <a class="nav-link " href="{{url_for ('video_vk') }}">Видео VK</a>
+            </nav>
+        </div>
+      </header>
+
+      <div class="inner cover">
+        {% if info!=None %}
+        <p><a class="btn btn-success" href="{{url_for('video_youtube')}}" role="button">Скачать другое Youtube Video</a></p>
+        <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="{{embed}}"></iframe>
+        </div>
+
+            <p></p>
+            <table id="table" class="table  table-dark table-sm"
+            data-toggle="table"
+			 data-search="true"
+			 data-filter-control="true"
+		     data-show-export="true"
+			 data-click-to-select="true"
+			 data-toolbar="#toolbar">
+            <thead>
+                <th scope="col" style="width: 15%">Разрешение</th>
+                <th scope="col" style="width: 15%">Длительность</th>
+                <th scope="col" style="width: 20%">Размер</th>
+                <th scope="col" style="width: 10%"></th>
+            </thead>
+             <tbody id="myTable">
+            {% for v in video %}
+                <tr>
+                    <td class="text-center">{{v[0]}}</td>
+                    <td class="text-center">{{info['length']//60}}:{{info['length']%60}}</td>
+                    <td class="text-center">{{v[3]}} mb</td>
+                    <td class="text-center"><a class="btn btn-danger" href="{{ v[2] }}" role="button" target="_blank"> Скачать</a></td>
+                 </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+          <div class="row">
+              <div class="col-3"> </div>
+              <div class="col-9"> * Нажми скачать, в открывшемся окне кликни правой кнопкой мышки на видео и выбери "Сохранить видео"</div>
+          </div>
+
+        {% endif %}
+
+{%endblock%}

@@ -1,0 +1,49 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+<body class="text-center back-image">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <a class="masthead-brand" href="{{url_for('index')}}"><h3>VideoParser</h3><a/>
+            <nav class="nav nav-masthead justify-content-center">
+              <a class="nav-link " href="{{url_for('video_youtube')}}">Видео Youtube</a>
+              <a class="nav-link active" href="{{url_for ('video_vk') }}">Видео VK</a>
+            </nav>
+        </div>
+      </header>
+
+      <div class="inner cover">
+        <p><a class="btn btn-success" href="{{url_for('video_vk')}}" role="button">Скачать другое VK Video</a></p>
+        {% if vk_video!=None %}
+          <img src="{{ vk_video['image_url'] }}" class="img-thumbnail" alt="Cinque Terre">
+
+
+            <p></p>
+            <table id="table" class="table  table-dark table-sm table-borderless"
+            data-toggle="table"
+			 data-search="true"
+			 data-filter-control="true"
+		     data-show-export="true"
+			 data-click-to-select="true"
+			 data-toolbar="#toolbar">
+            <thead>
+                <th scope="col" style="width: 70%"></th>
+                <th scope="col" style="width: 30%"></th>
+            </thead>
+             <tbody id="myTable">
+
+                <tr>
+                    <td class="text-center"><a href="{{vk_video['vk_url']}}" > {{vk_video['title']}} </a></td>
+                    <td class="text-center"><a class="btn btn-danger" href="{{ vk_video['video'] }}" role="button" target="_blank"> Скачать</a></td>
+                 </tr>
+            {% endif %}
+            </tbody>
+        </table>
+          <div class="row">
+              <div class="col-3"> </div>
+              <div class="col-9"> * Нажми скачать, в открывшемся окне кликни правой кнопкой мышки на видео и выбери "Сохранить видео"</div>
+          </div>
+
+{%endblock%}

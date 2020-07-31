@@ -1,0 +1,20 @@
+#Add. commands
+
+pip3 install flask --upgrade
+pip3 install requests --upgrade
+pip3 install beautifulsoup4 --upgrade
+pip3 install flask-sqlalchemy --upgrade #to work with scl database
+
+
+# Downloading video - youtube
+pip3 install pytube3 --upgrade
+Issue: https://github.com/nficano/pytube/issues/642
+https://github.com/nficano/pytube/issues/301
+
+# Requirements
+pip3 freeze > requirements.txt
+
+# Add. links
+https://www.codingmedved.com/en-us/
+https://www.w3schools.com/bootstrap4/bootstrap_images.asp
+https://courses.prettyprinted.com/courses/

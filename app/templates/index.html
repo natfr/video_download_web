@@ -1,0 +1,27 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+<body class="text-center back-image">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+            <a class="masthead-brand" href="{{url_for('index')}}"><h3>VideoParser</h3><a/>
+            <nav class="nav nav-masthead justify-content-center">
+              <a class="nav-link" href="{{url_for('video_youtube')}}">Видео Youtube</a>
+              <a class="nav-link " href="{{url_for ('video_vk') }}">Видео VK</a>
+            </nav>
+        </div>
+      </header>
+
+      <div class="inner cover">
+          <div class="row">
+              <div class="col-6">
+                  <p><a class="btn btn-success" style="width:200px;" href="{{url_for('video_youtube')}}" role="button">Скачать Youtube Video</a></p>
+              </div>
+              <div class="col-6">
+                  <p><a class="btn btn-success" style="width:200px;" href="{{url_for('video_vk')}}" role="button">Скачать VK Video</a></p>
+              </div>
+          </div>
+
+{%endblock%}
