@@ -31,9 +31,13 @@ def video_youtube():
     """
     try:
         link = request.form['link']
+        print(link)
         info = youtube_info(link)
+        print(info)
         video_to_download = youtube_download(link)
+        print(video_to_download)
         embed = get_embed(link)
+        print(embed)
         return render_template('video_youtube_download.html', info=info, video=video_to_download, embed=embed)
     except:
         return render_template('video_youtube.html')
