@@ -48,7 +48,18 @@ __________
 cipher_url = [
                 parse_qs(formats[i]["signatureCipher"]) for i, data in enumerate(formats)
             ]
-
+            
+__________           
+#### Instruction
+   If you want to download video:
+   1. go to the website and choose a type of video you want to download
+   ![video_download_web](screens/img1.png)
+    
+   2. fill out a blank with a link and click "download"
+   ![video_download_web](screens/img2.png)
+   
+   3. choose a video and click "download" (follow the instructionы below the button "download")
+   ![video_download_web](screens/img3.png)
 __________
 #### Contact details
    natfr (telegram)
