@@ -68,8 +68,9 @@ def get_embed(url):
     return link
 
 
-# if __name__ == '__main__':
-#     url1 = 'https://www.youtube.com/watch?v=L3BUO3GJrj0'
-    # print(youtube_download(url1))
+if __name__ == '__main__':
+    url1 = 'https://www.youtube.com/watch?v=L3BUO3GJrj0'
+    print(youtube_info(url1))
+    print(youtube_download(url1))
     # youtube_download(url1)
     # youtube_download_local(url1)
