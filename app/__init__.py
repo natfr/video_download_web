@@ -4,7 +4,7 @@ from app.youtube import youtube_info, youtube_download, get_embed
 from app.vk import get_vk_video
 
 app = Flask(__name__)  # where __name__ is name of current file
-ext = Sitemap(app=app)
+#ext = Sitemap(app=app)
 # http://127.0.0.1:5000/sitemap.xml for local host
 
 
@@ -14,6 +14,13 @@ def index():
     The function returns a main page template to user
     """
     return render_template('index.html')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    """
+    The function returns a sitemap page
+    """
+    return render_template('sitemap.xml')
 
 
 @app.route('/video_youtube', methods=['GET', 'POST'])
