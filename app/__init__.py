@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request
+from flask_sitemap import Sitemap
 from app.youtube import youtube_info, youtube_download, get_embed
 from app.vk import get_vk_video
 
 app = Flask(__name__)  # where __name__ is name of current file
+ext = Sitemap(app=app)
+# http://127.0.0.1:5000/sitemap.xml for local host
 
 
 @app.route('/')
