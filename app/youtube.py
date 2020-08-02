@@ -68,10 +68,10 @@ def get_embed(url):
     return link
 
 
-if __name__ == '__main__':
-    url2='https://www.youtube.com/watch?v=Hy0hg7HrBlQ'
-    url1 = 'https://www.youtube.com/watch?v=L3BUO3GJrj0'
-    print(youtube_info(url2))
-    print(youtube_download(url2))
+# if __name__ == '__main__':
+#     url2='https://www.youtube.com/watch?v=Hy0hg7HrBlQ'
+#     url1 = 'https://www.youtube.com/watch?v=L3BUO3GJrj0'
+#     print(youtube_info(url2))
+#     print(youtube_download(url2))
     # youtube_download(url1)
     # youtube_download_local(url1)

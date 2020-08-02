@@ -32,7 +32,7 @@ __________
 __________  
 #### Additional info
 Pytube3 was used to work with youtube. I had an issue with cipher and 
-used "https://github.com/nficano/pytube/issues/642" to handle it (fixed this issue by changing 
+used "https://github.com/nficano/pytube/issues/642" and "https://github.com/nficano/pytube/issues/641" to handle it (fixed this issue by changing 
 a few lines in extract.py)
 
 How it was before changes:
@@ -48,7 +48,7 @@ __________
 cipher_url = [
                 parse_qs(formats[i]["signatureCipher"]) for i, data in enumerate(formats)
             ]
-            
+
 __________           
 #### Instruction
    If you want to download video:
