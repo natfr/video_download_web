@@ -23,20 +23,50 @@ def sitemap():
     return render_template('sitemap.xml')
 
 
+# @app.route('/video_youtube', methods=['GET', 'POST'])
+# def video_youtube():
+#     """
+#     The function collects user's request and returns a page with a result (Youtube video).
+#     If the link is not related to youtube video, the function returns initial (blank) Video_youtube template.
+#     """
+#     try:
+#         link = request.form['link']
+#         info = youtube_info(link)
+#         video_to_download = youtube_download(link)
+#         embed = get_embed(link)
+#         return render_template('video_youtube_download.html', info=info, video=video_to_download, embed=embed)
+#     except:
+#         return render_template('video_youtube.html')
+
+
 @app.route('/video_youtube', methods=['GET', 'POST'])
 def video_youtube():
     """
     The function collects user's request and returns a page with a result (Youtube video).
     If the link is not related to youtube video, the function returns initial (blank) Video_youtube template.
     """
-    try:
-        link = request.form['link']
-        info = youtube_info(link)
-        video_to_download = youtube_download(link)
-        embed = get_embed(link)
-        return render_template('video_youtube_download.html', info=info, video=video_to_download, embed=embed)
-    except:
-        return render_template('video_youtube.html')
+    return render_template('video_youtube.html')
+
+@app.route('/video_youtube_download', methods=['GET', 'POST'])
+def video_youtube_download():
+    """
+    The function collects user's request and returns a page with a result (Youtube video).
+    If the link is not related to youtube video, the function returns initial (blank) Video_youtube template.
+    """
+    link = request.form['link']
+    print(link)
+    info = youtube_info(link)
+    print(info)
+    video_to_download = youtube_download(link)
+    print(video_to_download)
+    embed = get_embed(link)
+    print(embed)
+    return render_template('video_youtube_download.html', info=info, video=video_to_download, embed=embed)
+
+
+
+
+
 
 
 @app.route('/video_vk', methods=['GET', 'POST'])
